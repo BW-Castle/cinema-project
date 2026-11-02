@@ -8,17 +8,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RoleCheck
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  Closure(Request): (Response)  $next
-     */
-    public function handle(Request $request, Closure $next, string $role): Response 
-    { 
+    public function handle(Request $request, Closure $next, string $role): Response
+    {
         if (!auth()->check() || auth()->user()->role !== $role) 
         { 
             abort(403, 'Доступ запрещён'); 
-        } 
+        }
         return $next($request); 
     }
 }

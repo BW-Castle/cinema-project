@@ -38,7 +38,7 @@
 
                     @if(auth()->check() && auth()->user()->role === 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.dashboard') }}">⚙️ Админка</a>
+                            <a class="nav-link" href="{{ route('panel') }}">⚙️ Админка</a>
                         </li>
                     @endif
                 </ul>
